@@ -17,14 +17,13 @@ class _HomeState extends State<Home> {
     setState(() {
       _people += delta;
 
-      if(_people < 1){
+      if (_people < 1) {
         _infoText = "Restaurante Vazio.";
-      } else if(_people <= 10){
+      } else if (_people <= 10) {
         _infoText = "Pode entrar!";
       } else {
         _infoText = "Lotado!";
       }
-
     });
   }
 
@@ -74,8 +73,7 @@ class _HomeState extends State<Home> {
                 ),
               ],
             ),
-            Text(
-              _infoText,
+            Text(_infoText,
                 style: TextStyle(
                     color: Colors.white,
                     fontStyle: FontStyle.italic,
