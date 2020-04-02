@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
       } else if (_people <= 10) {
         _infoText = "Pode entrar!";
       } else {
-        _infoText = "Lotado!";
+        _infoText = "Lotadooooo!";
         _people = 10;
             
     }
