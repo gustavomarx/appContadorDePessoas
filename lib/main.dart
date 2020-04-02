@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(MaterialApp(title: "Contador de Pessoas", home: Home()));
@@ -19,12 +21,16 @@ class _HomeState extends State<Home> {
 
       if (_people < 1) {
         _infoText = "Restaurante Vazio.";
+        _people = 0;
       } else if (_people <= 10) {
         _infoText = "Pode entrar!";
       } else {
         _infoText = "Lotado!";
-      }
-    });
+        _people = 10;
+            
+    }
+  }
+  );
   }
 
   @override
@@ -39,6 +45,19 @@ class _HomeState extends State<Home> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Row(
+              children: <Widget>[
+                Expanded(
+                  child: Text(
+                    "Quantidade de pessoas: ",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic),
+                  ),
+                ),
+              ],
+            ),
             Text("Pessoas: $_people",
                 style: TextStyle(
                   color: Colors.white,
@@ -79,8 +98,7 @@ class _HomeState extends State<Home> {
                     fontStyle: FontStyle.italic,
                     fontSize: 30.0))
           ],
-        )
+        ),
       ],
     );
-  }
-}
+  }}
